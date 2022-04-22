@@ -12,6 +12,7 @@ public class DNI {
 			
 			if (!Character.isDigit(dni.charAt(i))) {
 				throw new DniInvalido();
+				//return false;
 			}
 		}
 		

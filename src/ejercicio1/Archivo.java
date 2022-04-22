@@ -52,11 +52,22 @@ public class Archivo {
 				linea = miBuffer.readLine();
 				Persona persona = new Persona();
 				if(linea != null) {
+					
 					String[] parte = linea.split("-");
-					persona.setNombre(parte[0]);
-					persona.setApellido(parte[1]);
-					persona.setDni(parte[2]);
-					listaPersonas.add(persona);											
+					DNI dni = new DNI();
+					try {
+						
+						dni.verificarDniInvalido(parte[2]);
+						
+						persona.setNombre(parte[0]);
+						persona.setApellido(parte[1]);
+						persona.setDni(parte[2]);
+						listaPersonas.add(persona);	
+					} catch (DniInvalido e) {
+						
+						System.out.println("DNI INVALIDO");
+					}
+														
 				}
 			}
 			miBuffer.close();

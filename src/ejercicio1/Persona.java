@@ -1,6 +1,8 @@
 package ejercicio1;
 
-public class Persona {
+import java.util.Comparator;
+
+public class Persona implements Comparable<Persona>{
 
 	private String nombre;
 	private String apellido;
@@ -80,6 +82,12 @@ public class Persona {
 	@Override
 	public String toString() {
 		return  nombre + "-" + apellido + "-" + dni;
+	}
+
+	@Override
+	public int compareTo(Persona o) {
+		
+		return this.apellido.compareTo(o.getApellido());
 	}
 
 }
