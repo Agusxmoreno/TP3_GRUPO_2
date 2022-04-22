@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 public class Principal {
 
 	public static void main(String[] args) {
-
+		
+		
 		try {
 			String dni = JOptionPane.showInputDialog("Ingrese DNI: ");
 			DNI.verificarDniInvalido(dni);
@@ -14,6 +15,10 @@ public class Principal {
 			System.out.println("DNI INVALIDO");
 			e.printStackTrace();
 		}
+		
+		Archivo archivo = new Archivo();
+		archivo.setRuta("Personas.txt");
+		archivo.leerLineas();
 
 	}
 
