@@ -42,8 +42,8 @@ public class Principal {
 		
 		Collections.sort(listaOrdenada);
 		
+		//PUNTO C
 		
-		//Iterador
 				Iterator<Persona>it = listaOrdenada.iterator();
 				while(it.hasNext()) {
 					Persona per = it.next();
