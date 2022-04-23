@@ -8,8 +8,6 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import ejemplo1_Files.Archivo;
-
 public class Principal {
 
 	public static void main(String[] args) {
@@ -45,22 +43,14 @@ public class Principal {
 		//PUNTO C
 		
 				Iterator<Persona>it = listaOrdenada.iterator();
-				while(it.hasNext()) {
-					Persona per = it.next();
-					System.out.println(per.toString());
-				
 				Archivo archivo2 = new Archivo();
-					
-					System.out.println("CREANDO ARCHIVO Resultados.txt ...");
+				System.out.println("CREANDO ARCHIVO Resultados.txt ...");
+				while(it.hasNext()) {
 					archivo2.creaArchivo("Resultados.txt");
-						while(it.hasNext()) {
-							Persona per2 = it.next();
-							System.out.println(per2.toString());
-							archivo2.escribe_lineas(String.valueOf(per2));
+					Persona per2 = it.next();
+					System.out.println(per2.toString());
+					archivo2.escribe_lineas(String.valueOf(per2));
 						}
-				
-						}
-
 				}
 	}
 	
